@@ -1,6 +1,6 @@
 {
   "auth": {
-    "terpconnect5908f05d": {
+    "terpconnect7b74fd8d": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -16,7 +16,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authterpconnect5908f05d"
+              "userPoolId": "authterpconnect7b74fd8d"
             }
           },
           "additionalAuthenticationProviders": []

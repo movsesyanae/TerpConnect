@@ -1,19 +1,19 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-terpconnect-dev-161611-authRole",
-      "UnauthRoleArn": "arn:aws:iam::141606597896:role/amplify-terpconnect-dev-161611-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::141606597896:role/amplify-terpconnect-dev-161611-authRole",
+      "AuthRoleName": "amplify-terpconnect-dev-82142-authRole",
+      "UnauthRoleArn": "arn:aws:iam::141606597896:role/amplify-terpconnect-dev-82142-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::141606597896:role/amplify-terpconnect-dev-82142-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-terpconnect-dev-161611-deployment",
-      "UnauthRoleName": "amplify-terpconnect-dev-161611-unauthRole",
-      "StackName": "amplify-terpconnect-dev-161611",
-      "StackId": "arn:aws:cloudformation:us-east-1:141606597896:stack/amplify-terpconnect-dev-161611/38e68eb0-5dc0-11eb-90cb-0e28043c5c55",
-      "AmplifyAppId": "d1g05tjyo94epf"
+      "DeploymentBucketName": "amplify-terpconnect-dev-82142-deployment",
+      "UnauthRoleName": "amplify-terpconnect-dev-82142-unauthRole",
+      "StackName": "amplify-terpconnect-dev-82142",
+      "StackId": "arn:aws:cloudformation:us-east-1:141606597896:stack/amplify-terpconnect-dev-82142/6edc5ed0-5fd9-11eb-ae1c-1214c28caebf",
+      "AmplifyAppId": "d131nwy56vn6e8"
     },
     "categories": {
       "auth": {
-        "terpconnect5908f05d": {}
+        "terpconnect7b74fd8d": {}
       }
     }
   }

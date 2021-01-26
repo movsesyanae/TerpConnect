@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "terpconnect5908f05d_identitypool_5908f05d",
+    "identityPoolName": "terpconnect7b74fd8d_identitypool_7b74fd8d",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "terpco5908f05d",
-    "userPoolName": "terpconnect5908f05d_userpool_5908f05d",
+    "resourceNameTruncated": "terpco7b74fd8d",
+    "userPoolName": "terpconnect7b74fd8d_userpool_7b74fd8d",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "terpco5908f05d_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "terpco7b74fd8d_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "5908f05d",
-    "resourceName": "terpconnect5908f05d",
+    "sharedId": "7b74fd8d",
+    "resourceName": "terpconnect7b74fd8d",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
