@@ -1,11 +1,15 @@
 import {useState,useEffect,useRef} from 'react'
 import SignIn from './SignIn'
+import { Auth } from 'aws-amplify';
+import Filter from 'bad-words';
 
 import './SignInStyleMobile.scss'
 import SignUp from './SignUp'
 import { BrowserRouter as Router, Switch, Route, Redirect, useHistory, Link } from 'react-router-dom';
 
 const SignUpComponentMobile = (props) => {
+	const filter = new Filter();
+	const [bio, setBio] = useState('');
 	const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -87,16 +91,14 @@ const SignUpComponentMobile = (props) => {
 		}
 	}
 	
-	function submitHandler (e) {
+	async function submitHandler (e) {
         e.preventDefault();
 
         let stringInputs = [name,email,password,confirmPassword,nonBinary];
-        let submitPass = true;  //as long as true should succefully submit
 
-        if(name == '' || email == '' || password == '' || confirmPassword == '' ||  lookingFor.length === 0 || (!male && !female && !other) || (other && nonBinary == '')) {
+        if(bio == '' || name == '' || email == '' || password == '' || confirmPassword == '' ||  lookingFor.length === 0 || (!male && !female && !other) || (other && nonBinary == '')) {
 			// props.failMessage('You have not selected all fields');
-			setSignUpFailMessage('You have not selected all fields');
-            submitPass = false;
+			setSignUpFailMessage('Please complete all fields');
             return;
 		}
 		
@@ -104,36 +106,92 @@ const SignUpComponentMobile = (props) => {
         for(let x in stringInputs) { //injection prevention
             console.log(stringInputs[x]);
             if(stringInputs[x].includes('\'') || stringInputs[x].includes('<') || stringInputs[x].includes('>')) {
-				setSignUpFailMessage('Stop hacking ;)');
+                setSignUpFailMessage('nice try bru');
                 // props.failMessage('You may not include symbols such as \' or < >');
-                submitPass = false;
                 return;
             }
         }
 
 		if(!(password == confirmPassword)) { //FIX: passwords showing up in console
-			setSignUpFailMessage('Passwords must match!');
+            setSignUpFailMessage('Please make sure your passwords match');
             // props.failMessage('Passwords must match!');
-            submitPass = false;
             return;
         }
 
         if(!email.endsWith('@umd.edu')) {
-			setSignUpFailMessage('Please use a @umd.edu email');
+            setSignUpFailMessage('Please use your @umd.edu email');
             // props.failMessage('Please use a @umd.edu email');
-            submitPass = false;
+            return;
+		}
+		if (filter.isProfane(name)) {
+            setSignUpFailMessage('Please obstain from profanity in your name');
+            return;
+		}
+		
+		if (password.length < 8) {
+            setSignUpFailMessage('Your password must contain at least 8 characters');
+            return;
+        }
+		
+		if (filter.isProfane(bio)) {
+            setSignUpFailMessage('Please obstain from profanity in your bio');
             return;
         }
 
         
-          // Do server call here
+		  // Do server call here
+		try {
+			var gender = '';
+			if (female) {
+				gender = 'Female';
+			} else if (male) {
+				gender = 'Male';
+			} else {
+				gender = nonBinary;
+			}
+
+			var lookingForSB = 'false';
+			var lookingForF = 'false';
+			var lookingForSF = 'false';
+			if (lookingFor.includes(0)){
+				lookingForSB = 'true';
+			}
+			if (lookingFor.includes(1)){
+				lookingForF = 'true';
+			}
+			if (lookingFor.includes(2)){
+				lookingForSF = 'true';
+			}
+
+			const { user } = await Auth.signUp({
+				username: email,
+				password: password,
+				attributes: {
+					
+					email: email,
+					// other custom attributes 
+					'custom:name': name,
+					'custom:gender': gender,
+					'custom:lookingForSB': lookingForSB,
+					'custom:lookingForF': lookingForF,
+					'custom:lookingForSF': lookingForSF,
+					'custom:bio': bio,
+
+				}
+			});
+			console.log(user);
+			props.returnObject({
+				nextPage: 'confirm-email',
+				email: email,
+				password: password
+			});
+		} catch (error) {
+			console.log('error signing up:', error);
+		}
+
 
 
   
-        // Once everything is handled
-        const user = createUser();
-        const logInObject = {user: user, verified: false}
-        props.logIn(logInObject);  
     }
 
     const createUser = () => {
@@ -300,6 +358,11 @@ const SignUpComponentMobile = (props) => {
 							<option value={1} > Friend </option>
 							<option value={2} > Friend ;) </option>
 						</select>
+					</div>
+
+					<div className = 'entry-mobile grid-unit9'>
+						<label>Bio</label>
+                		<textarea maxLength = '256' placeholder = 'tell your classmates something about yourself ;)' value={bio} onChange = { (e) => setBio(e.target.value)}/>
 					</div>
 
 

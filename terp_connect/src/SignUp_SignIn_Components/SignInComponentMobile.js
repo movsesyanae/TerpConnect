@@ -4,6 +4,7 @@ import SignIn from './SignIn'
 import './SignInStyleMobile.scss'
 import SignUp from './SignUp'
 import { BrowserRouter as Router, Switch, Route, Redirect, useHistory, Link } from 'react-router-dom';
+import { Auth } from 'aws-amplify';
 
 const SignUpComponentMobile = (props) => {
     const [email, setEmail] = useState('');
@@ -32,7 +33,7 @@ const SignUpComponentMobile = (props) => {
 		}
 	}
 	
-	function submitHandler (e) {
+	async function submitHandler (e) {
         e.preventDefault();
 
         let stringInputs = [email,password];
@@ -57,14 +58,33 @@ const SignUpComponentMobile = (props) => {
 
 
      
-        //check servers return here
-        const verified = true; // needs to be changed to be seen from server call
+		//check servers return here
+		
 
-   
-        // Once everything is handled
-        const user = createUser();
-        const logInObject = {user: user, verified: verified}
-        props.logIn(logInObject);  
+		try {
+            const user = await Auth.signIn(email, password);
+            console.log(user);
+            props.returnObject({
+                nextPage: 'home-page'
+            });
+        } catch (error) {
+            console.log('error signing in', error);
+            if(error['code'] === 'UserNotConfirmedException' ) {
+                //User hasnt verified email
+                Auth.resendSignUp(email);
+
+                props.returnObject({
+                    nextPage: 'confirm-email',
+                    email: email,
+                    password: password
+                });
+            } else {
+                setSignUpFailMessage('Incorrect email or password');
+                return;
+            }
+        }
+
+    
     }
 
     const createUser = () => {

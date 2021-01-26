@@ -263,6 +263,22 @@ div.entry-mobile.grid-unitx {
 // }
 
 
+div.entry-mobile.grid-unit9 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    label{
+        grid-row: 1/span 1;
+        color:white;
+    }
+    textarea{
+        grid-row: 2/span 1;
+        height:5em;
+        width: 15em;
+        font-size: 1em;
+    }
+}
+
 div.entry-mobile.grid-unit8 {
     background-color: white;
     /* border-style: solid;
@@ -474,6 +490,7 @@ div.entry-mobile.grid-unit8 {
     #alert-mobile {
         background-color: #999;
         font-size: .8em;
+        width:80%;
     }
 
     .entry-mobile.grid-footer {

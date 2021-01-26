@@ -81,11 +81,11 @@ const Verification = (props) => {
 
         } catch (error) {
             console.log('in verification', error);
-            // props.returnObject({
-            //     nextPage: 'sign-out',
-            //     message: 'something went wrong during email verification',
-            //     error: error
-            // });
+            props.returnObject({
+                nextPage: 'sign-out',
+                message: 'something went wrong during email verification',
+                error: error
+            });
         }
 
     }

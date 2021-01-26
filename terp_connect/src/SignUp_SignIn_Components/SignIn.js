@@ -15,6 +15,12 @@ const SignIn = (props) => {
 
         let inputs = [signUpFields.email, signUpFields.password];
         var i;
+
+        if(signUpFields.email.length < 1 || signUpFields.password.length < 1){
+            props.message('Please complete all fields');
+            return;
+        }
+
         for(i = 0; i < inputs.length; i++){
             if(inputs[i].includes('\'') || inputs[i].includes('<') || inputs[i].includes('>')) {
                 props.message('nice try bru');

@@ -4,7 +4,7 @@ import './newSignUpIn.scss';
 
 const Switcheroo = () => {
     const [titleText,setTitleText] = useState('Welcome to TerpConnect');
-    const [descripText,setDescripText] = useState('Meet People in your classes!');
+    const [descripText,setDescripText] = useState('Meet people in your classes!');
     const [btnText,setBtnText] = useState('Sign Up');
     const [sideA,setSideA] = useState(false);
 

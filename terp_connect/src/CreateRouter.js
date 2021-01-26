@@ -100,12 +100,12 @@ const CreateRouter = () => {
                     <Route exact path = '/sign-up-mobile'> 
                         {/* {user ? <Verification /> : <h1>damn</h1>} */}
                         {/* {!isMobile ? <Redirect to = '/' /> : <SignUpComponentMobile logIn = {(value) => handleLogIn(value)} user = {(user) => handleLogIn(user)}  />} */}
-                        {!isMobile ? <Redirect to = '/' /> : <SignUpComponentMobile />}
+                        {!isMobile ? <Redirect to = '/' /> : <SignUpComponentMobile returnObject = {handleReturn}/>}
                     </Route>
                     
                     <Route exact path = '/sign-in-mobile'> 
                         {/* {!isMobile ? <Redirect to = '/' /> : <SignInComponentMobile logIn = {(value) => handleLogIn(value)} user = {(user) => handleLogIn(user)}  />} */}
-                        {!isMobile ? <Redirect to = '/' /> : <SignInComponentMobile />}
+                        {!isMobile ? <Redirect to = '/' /> : <SignInComponentMobile returnObject = {handleReturn}/>}
                     </Route>
 
                     <Route exact path = '/main'>
