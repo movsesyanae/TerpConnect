@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+ $title-color: #FFF;
+ $header-color: #EC7063;
+ $side-colors: #ebebeb; //was lightgrey
+ $chat-color: #FFF;
+ $select-chat:#d7d7d7;
+ $text-box: #F2F4F4;
+ $chat-right: #EC7063;
+ $chat-left: lightgrey;
+ $text-right:#FFF;
+ $text-left:#000;
+ $info-color:#ffffff; //was lightgrey
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+  %border-package {
+    border-style: solid;
+    border-radius: 2px;
+    border-color: black;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+    }
+
+
+#outerHomePage {
+    font-family: 'Montserrat', sans-serif;
+
+    display: grid;
+    grid-template-columns: 33% auto; //was 25
+    grid-template-rows: 8% auto; //was 15
+    background-color: $header-color;
+
+    height: 100vh;
+    width: 100vw;
+
+    #upperContent {
+        grid-column: 1/span 2;
+        grid-row: 1/span 1;
+        
+        @extend %border-package;
+        border-top: none;
+        border-bottom: none;
+
+        display:grid;
+        grid-template-columns: 33% auto;
+        grid-template-rows: auto;
+
+        h1 {
+            
+            // font-family: 'Pacifico', cursive;
+            align-self:center;
+            margin-left: 5%;
+            color:$title-color;
+            grid-column: 1/span 1;
+            grid-row: auto;
+            
+        }
+    }
+
+    
+
+    #chatSelectBox {
+        grid-column: 1/span 1;
+        grid-row: 2/span 1;
+        background-color:$side-colors;
+
+        display:grid;
+        grid-template-rows: auto 50%;
+        border-bottom: none;
+
+        @extend %border-package;
+        
+        border-top: none;
+
+        #overFlowBox{
+            grid-row: 1/span 1;
+            height:100%;
+            width:100%;
+            overflow: scroll;
+
+            #innerChatSelectBox {
+              
+                display: grid;
+                grid-template-rows:auto;
+                
+                
+                // row-gap: 1em;
+                // margin-left: 0.5em;
+                // margin-right: 0.5em;
+                
+                
+                width: 100%;
+                height: fit-content;
+    
+                a {
+                    color: darkblue;
+                    text-decoration: none;
+                }
+
+                #contactBoxFirst {
+                    background-color:$select-chat;
+                    height:3em;
+        
+                    @extend %border-package;
+                    border-right: none;
+                    border-left:none;
+                    border-top: none;
+                    border-color:#283747;
+                }
+    
+                #contactBox {
+                    background-color:$select-chat;
+                    height:3em;
+        
+                    @extend %border-package;
+                    border-right: none;
+                    border-top:none;
+                    border-left:none;
+                    border-color:#283747;
+                }
+
+                #contactBoxLast {
+                    background-color:$select-chat;
+                    height:3em;
+        
+                    @extend %border-package;
+                    border-right: none;
+                    border-top:none;
+                    border-bottom: none;
+                    border-left:none;
+                    border-color:#283747;
+                }
+            }
+        }
+
+        
+
+        #contactInfoBox {
+            grid-row:2/span 1;
+            background-color: $info-color;
+            @extend %border-package;
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+            border-top:none;
+
+            display:grid;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+            div {
+                margin-left: 1%;
+            }
+        }
+
+        
+    }
+
+    #chatBox {
+        grid-column: 2/span 1;
+        grid-row: 2/span 1;
+        background-color: $chat-color;
+
+        @extend %border-package;
+        border-top: none;
+        border-left:none;
+        border-bottom:none;
+
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto 10%;
+        
+        overflow: hidden;
+
+        ::-webkit-scrollbar {
+            display: none;
+            }
+
+        #messageArea {
+
+          
+
+            grid-column: auto;
+            grid-row:1/span 1;
+
+            display: grid;
+            grid-template-rows:auto;
+            overflow: scroll;
+            
+
+            %messageStyle {
+                height: fit-content;
+                width: fit-content;
+                
+
+                padding: .3em;
+                border-radius: 4px;
+            }
+
+            #innerMessageArea {
+                display: grid;
+                grid-template-rows:auto;
+                width: 100%;
+                height: fit-content;
+
+
+                #messageBoxRec {
+                    display: grid;
+                    grid-column: 1/span 1;
+                    grid-row: auto;
+                    margin-left: 1%;
+                    margin-top: 1%;
+                    margin-bottom: 15;
+
+
+                    color: $text-left;
+                    background-color:$chat-left;
+                    @extend %messageStyle;
+                }
+
+                #messageBoxSend {
+                    display: grid;
+                    justify-self: right;
+                    grid-column: 1/span 1;
+                    grid-row: auto;
+                    height:fit-content;
+                    margin-right: 1%;
+                    margin-top: 1%;
+                    margin-bottom: 1%;
+
+                    color: $text-right;
+                    background-color: $chat-right;
+                    @extend %messageStyle;
+                }
+
+            }
+            
+        }
+
+        #writingBox {
+            grid-column: auto;
+            grid-row: 2/span 1;
+
+            // @extend %border-package;
+            border: none;
+            outline:none;
+            background-color: lightsalmon;
+
+            textarea {
+                font-size: 1.2em;
+                width: 100%;
+                height: 100%;
+                background-color: $text-box;
+                border: none;
+                outline:none;
+                resize:none;
+            }
+        }
+
+    }
+}

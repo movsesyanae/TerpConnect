@@ -1,0 +1,49 @@
+# type Blog @model {
+#   id: ID!
+#   name: String!
+#   posts: [Post] @connection(keyName: "byBlog", fields: ["id"])
+# }
+
+# type Post @model @key(name: "byBlog", fields: ["blogID"]) {
+#   id: ID!
+#   title: String!
+#   blogID: ID!
+#   blog: Blog @connection(fields: ["blogID"])
+#   comments: [Comment] @connection(keyName: "byPost", fields: ["id"])
+# }
+
+# type Comment @model @key(name: "byPost", fields: ["postID", "content"]) {
+#   id: ID!
+#   postID: ID!
+#   post: Post @connection(fields: ["postID"])
+#   content: String!
+# }
+
+
+type Message @model
+@key(name: "mct", fields: ["conversationID", "timestamp"], queryField: "messageByConversationAndTime")
+@key(name: "mcs", fields: ["conversationID", "sender"], queryField: "messageByConversationAndSender")
+{
+  id: ID!
+  conversationID: String!
+  sender: String!
+  message: String!
+  timestamp: Int!
+}
+
+type User @model
+{
+  id: String! # email is id
+  name: String!
+  gender: String!
+  lookingForList: [String]!
+  bio: String!
+  courseList: [String]!
+  matches: [String]! # @auth(rules: [{allow: owner}])
+}
+
+type Course @model
+{
+  id: String! # id is (course id + ' ' + professor) => (CMSC351 Clyde Kruskal)
+  studentList: [String]!
+}

@@ -1,0 +1,239 @@
+[ {
+    "convoId": "323",
+
+    "users": [
+        { "id": 4, "name": "alex"},
+        {"id": 8, "name": "val"}
+    ],
+
+    "course": "CMSC 330",
+    "interests": ["friends", "friends ;)", "studdy-buddy"],
+    "shared-interests": [1,2],
+
+    "texts":  [
+        {
+            "from":"4", "message": "imissher", "time": "9:30PM idk what time will look like"
+        },
+
+        {
+            "from":"8", "message": "shut up", "time": "9:30AM on the next day idk what time will look like"
+        },
+
+        {
+            "from":"4", "message": "butimissher", "time": "10:00AM idk what time will look like"
+        },
+        
+        {
+            "from":"8", "message": "why don't she want me", "time": "10:00PM idk what time will look like"
+        },
+
+        {
+            "from":"4", "message": "imissher", "time": "9:30PM idk what time will look like"
+        },
+
+        {
+            "from":"8", "message": "shut up", "time": "9:30AM on the next day idk what time will look like"
+        },
+
+        {
+            "from":"4", "message": "butimissher", "time": "10:00AM idk what time will look like"
+        },
+
+        
+        {
+            "from":"8", "message": "why don't she want me", "time": "10:00PM idk what time will look like"
+        },
+
+        {
+            "from":"4", "message": "imissher", "time": "9:30PM idk what time will look like"
+        },
+
+        {
+            "from":"8", "message": "shut up", "time": "9:30AM on the next day idk what time will look like"
+        },
+
+        {
+            "from":"4", "message": "butimissher", "time": "10:00AM idk what time will look like"
+        },
+
+        
+        {
+            "from":"8", "message": "why don't she want me", "time": "10:00PM idk what time will look like"
+        },
+        {
+            "from":"4", "message": "imissher", "time": "9:30PM idk what time will look like"
+        },
+
+        {
+            "from":"8", "message": "shut up", "time": "9:30AM on the next day idk what time will look like"
+        },
+
+        {
+            "from":"4", "message": "butimissher", "time": "10:00AM idk what time will look like"
+        },
+
+        
+        {
+            "from":"8", "message": "why don't she want me", "time": "10:00PM idk what time will look like"
+        }
+    ]
+        
+    
+
+} ,
+{
+    "convoId": "324",
+
+    "users": [
+        { "id": 4, "name": "alex"},
+        {"id": 9, "name": "Roxanne"}
+    ],
+
+    "texts":  [
+        {
+            "from":"4", "message": "roxanne roxanne", "time": "9:30PM idk what time will look like"
+        },
+
+        {
+            "from":"9", "message": "You don't have to put on the red light", "time": "9:30AM on the next day idk what time will look like"
+        },
+
+        {
+            "from":"4", "message": "butimissher", "time": "10:00AM idk what time will look like"
+        },
+        
+        {
+            "from":"9", "message": "why don't she want me", "time": "10:00PM idk what time will look like"
+        },
+
+        {
+            "from":"4", "message": "imissher", "time": "9:30PM idk what time will look like"
+        },
+
+        {
+            "from":"9", "message": "shut up", "time": "9:30AM on the next day idk what time will look like"
+        },
+
+        {
+            "from":"4", "message": "butimissher", "time": "10:00AM idk what time will look like"
+        },
+
+        
+        {
+            "from":"8", "message": "why don't she want me", "time": "10:00PM idk what time will look like"
+        },
+
+        {
+            "from":"4", "message": "imissher", "time": "9:30PM idk what time will look like"
+        },
+
+        {
+            "from":"8", "message": "shut up", "time": "9:30AM on the next day idk what time will look like"
+        },
+
+        {
+            "from":"4", "message": "butimissher", "time": "10:00AM idk what time will look like"
+        },
+
+        
+        {
+            "from":"8", "message": "why don't she want me", "time": "10:00PM idk what time will look like"
+        },
+        {
+            "from":"4", "message": "imissher", "time": "9:30PM idk what time will look like"
+        },
+
+        {
+            "from":"8", "message": "shut up", "time": "9:30AM on the next day idk what time will look like"
+        },
+
+        {
+            "from":"4", "message": "butimissher", "time": "10:00AM idk what time will look like"
+        },
+
+        
+        {
+            "from":"8", "message": "why don't she want me", "time": "10:00PM idk what time will look like"
+        }
+    ]
+        
+},
+{
+    "convoId": "325",
+
+    "users": [
+        { "id": 4, "name": "alex"},
+        {"id": 10, "name": "Rodrigo"}
+    ],
+
+    "texts":  [
+        {
+            "from":"4", "message": "wubba lubba dub dub", "time": "9:30PM idk what time will look like"
+        },
+
+        {
+            "from":"8", "message": "imissher", "time": "9:30AM on the next day idk what time will look like"
+        },
+
+        {
+            "from":"4", "message": "butimissher", "time": "10:00AM idk what time will look like"
+        },
+        
+        {
+            "from":"8", "message": "why don't she want me", "time": "10:00PM idk what time will look like"
+        },
+
+        {
+            "from":"4", "message": "imissher", "time": "9:30PM idk what time will look like"
+        },
+
+        {
+            "from":"8", "message": "shut up", "time": "9:30AM on the next day idk what time will look like"
+        },
+
+        {
+            "from":"4", "message": "butimissher", "time": "10:00AM idk what time will look like"
+        },
+
+        
+        {
+            "from":"8", "message": "why don't she want me", "time": "10:00PM idk what time will look like"
+        },
+
+        {
+            "from":"4", "message": "imissher", "time": "9:30PM idk what time will look like"
+        },
+
+        {
+            "from":"8", "message": "shut up", "time": "9:30AM on the next day idk what time will look like"
+        },
+
+        {
+            "from":"4", "message": "butimissher", "time": "10:00AM idk what time will look like"
+        },
+
+        
+        {
+            "from":"8", "message": "why don't she want me", "time": "10:00PM idk what time will look like"
+        },
+        {
+            "from":"4", "message": "imissher", "time": "9:30PM idk what time will look like"
+        },
+
+        {
+            "from":"8", "message": "shut up", "time": "9:30AM on the next day idk what time will look like"
+        },
+
+        {
+            "from":"4", "message": "butimissher", "time": "10:00AM idk what time will look like"
+        },
+
+        
+        {
+            "from":"8", "message": "why don't she want me", "time": "10:00PM idk what time will look like"
+        }
+    ]
+        
+}
+
+]

@@ -1,0 +1,172 @@
+
+@media only screen and (min-width: 1440px){
+    #outerScreen {
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: auto 25% 25% auto;
+        grid-template-rows: auto 60% auto;
+        background-color: #eee;
+    
+        font-family: 'Montserrat', sans-serif;
+        font-size:1vmax;
+    
+        #areaBox { //for dimension testing purposes
+            grid-column: 2 / span 2;
+            grid-row: 2/ span 1;
+    
+            background-color: #4287f5;
+            border-radius: 1em;
+            box-shadow: 10px 5px 5px #888888;
+    
+            display:grid;
+            grid-template-rows: 1fr 1fr 1fr;
+    
+            #title {
+                margin-top: 1em;
+                grid-row: 1/span 1;
+                color:#eee;
+                widows: 100%;
+                height: fit-content;
+    
+                p {
+                    font-size: 2em;
+                    text-align: center;
+                }
+            }
+    
+            #text{
+                grid-row: 2/span 1;
+                color:#eee;
+                widows: 100%;
+                height: fit-content;
+    
+                p {
+                    letter-spacing: 0.1em;
+                    font-size: 1em;
+                    text-align: center;
+                }
+            }
+    
+            #input-and-submit{
+                grid-row: 3/span 1;
+                display: grid;
+                grid-template-columns: repeat(12,1fr);
+                // margin: auto;
+    
+                input{
+                    justify-content: center;
+                    grid-column: 6/span 1;
+                    height: 2em;
+                    width:7em;
+                    border-style: none;
+                    padding-left: 0.3em;
+                    border-radius: 0.1em;
+                    -webkit-appearance: none; 
+                    -moz-appearance: textfield;
+                }
+                button{
+                    width:7em;
+                    border-style:none;
+                    border-radius:0.3em;
+                    margin-left: 1em;
+                    grid-column: 7/span 1;
+                    height: 2em;
+                    transition: 0.2s;
+                }
+                button:hover{
+                    background-color: #eee;
+                    scale:1.07;
+                }
+            }
+        }
+    }
+    }
+    
+    
+    //------mobile
+    
+    @media only screen and (max-width: 1440px){
+        body{
+            
+            margin:0px;
+            padding:0px;
+        }
+    
+        #outerScreen {
+            height: 100vh;
+            width: 100vw;
+            //display: grid;
+            //grid-template-columns: auto 25% 25% auto;
+            //grid-template-rows: auto 60% auto;
+            background-color: #4287f5;
+        
+            font-family: 'Montserrat', sans-serif;
+            font-size:3vmax;
+        
+            #areaBox { //for dimension testing purposes
+                height:100%;
+                width:100%;
+        
+                background-color: #4287f5;
+                border-radius: 1em;
+                box-shadow: 10px 5px 5px #888888;
+        
+                display:grid;
+                grid-template-rows: 20% 20% 1fr;
+        
+                #title {
+                    margin-top: 1em;
+                    grid-row: 1/span 1;
+                    color:#eee;
+                    widows: 100%;
+                    height: fit-content;
+        
+                    p {
+                        width:100%;
+                        font-size: 2em;
+                        text-align: center;
+                    }
+                }
+        
+                #text{
+                    grid-row: 2/span 1;
+                    color:#eee;
+                    widows: 100%;
+                    height: fit-content;
+        
+                    p {
+                        letter-spacing: 0.1em;
+                        font-size: 1em;
+                        text-align: center;
+                    }
+                }
+        
+                #input-and-submit{
+                    grid-row: 3/span 1;
+                    display: grid;
+                    grid-template-columns: 30% 1fr 1fr 50%;
+                    // margin: auto;
+        
+                    input{
+                        
+                        grid-column: 2/span 1;
+                        height: 2em;
+                        width:7em;
+                        border-style: none;
+                        padding-left: 0.3em;
+                        border-radius: 0.1em;
+                    }
+                    button{
+                        background-color: #eee;
+                        width:7em;
+                        border-style:none;
+                        border-radius:0.3em;
+                        margin-left: 1em;
+                        grid-column: 3/span 1;
+                        height: 2em;
+                    }
+                }
+            }
+        }
+        }

@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+#newOuterBox {
+    position:absolute;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: auto 25% 25% auto;
+    grid-template-rows: auto 60% auto;
+    background-color: #eee;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size:1vmax;
+
+    #entry-alert {
+        align-self:baseline;
+        justify-self: center;
+        grid-row: 3 / span 1;
+        grid-column: 2 / span 2;
+        border-radius: 0.5em;
+        /* margin-top: 5%; */
+        margin-top: 3em;
+        padding: 0.95em;
+        background-color: #f44336DD;
+        /* border-color: black;
+        border-style:solid; */
+        color: white;
+        /* width: 100%; */
+        
+        width: 70%;
+        font-size: 0.7em;
+    }
+
+    #areaBox { //for dimension testing purposes
+        grid-column: 2 / span 2;
+        grid-row: 2/ span 1;
+
+        background-color: darkcyan;
+
+        
+    }
+
+    #newSignUpBox::-webkit-scrollbar {
+        display: none;
+      }
+
+    #newSignUpBox {
+        grid-column: 3/ span 1;
+        grid-row: 2 / span 1;
+        background-color: white;
+
+        display: grid;
+        grid-template-rows: auto;
+        row-gap: 1.5em;
+        overflow: scroll;
+
+        scrollbar-width: none; 
+
+        %textFieldPackage {
+            border:none;
+            background-color: #eee;
+            width:100%;
+            height: 100%;
+            padding: 1%;
+            font-size: .7em;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+
+        #Label-field {
+            height: fit-content;
+            justify-self:center;
+            align-self: center;
+            grid-row: auto;
+            font-size: 1em;
+
+            padding-top: 0.4em;
+        }
+
+        #name-field {
+            justify-self:center;
+            align-self: center;
+            grid-row: auto;
+            font-size: 1em;
+            width:80%;
+            height: 2em;
+
+            // background-color: #eee;
+	        // border: none;
+	        // padding: 12px 15px;
+	        // margin: 8px 0;
+            // width: 100%;
+            input {
+                @extend %textFieldPackage;
+            }
+        }
+
+        #email-field {
+            justify-self:center;
+            align-self: center;
+            grid-row: auto;
+            font-size: 1em;
+            width:80%;
+            height: 2em;
+
+            // background-color: #eee;
+	        // border: none;
+	        // padding: 12px 15px;
+	        // margin: 8px 0;
+            // width: 100%;
+            input {
+                @extend %textFieldPackage;
+            }
+        }
+
+        #password-field {
+            justify-self:center;
+            align-self: center;
+            grid-row: auto;
+            font-size: 1em;
+            width:80%;
+            height: 2em;
+
+            // background-color: #eee;
+	        // border: none;
+	        // padding: 12px 15px;
+	        // margin: 8px 0;
+            // width: 100%;
+            input {
+                @extend %textFieldPackage;
+            }
+        }
+
+        #confirmPassword-field {
+            justify-self:center;
+            // margin: auto;
+            align-self: center;
+            grid-row: auto;
+            font-size: 1em;
+            width:80%;
+            height: 2em;
+
+            // background-color: #eee;
+	        // border: none;
+	        // padding: 12px 15px;
+	        // margin: 8px 0;
+            // width: 100%;
+            input {
+                @extend %textFieldPackage;
+            }
+        }
+
+        #gender-field {
+            justify-self: center;
+            // margin:auto;
+            align-self: center;
+            width: 80%;
+            height:5em;
+            background-color: #eee;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+
+            padding:1%;
+            margin-left: 1%;
+
+            label {
+                grid-column: 2/span 1;
+                grid-row: 1/span 1;
+                justify-self: center;
+            }
+
+            #male-r {
+                grid-column: 1 / span 1;
+                grid-row: 2/ span 1;
+                justify-self: center;
+            }
+
+            #female-r {
+                grid-column: 2 / span 1;
+                grid-row: 2/ span 1;
+                justify-self: center;
+            }
+
+            #other-r {
+                grid-column: 3 / span 1;
+                grid-row: 2/ span 1;
+                justify-self: center;
+            }
+
+            #male-l {
+                grid-column: 1 / span 1;
+                grid-row: 3/ span 1;
+                justify-self: center;
+            }
+
+            #female-l {
+                grid-column: 2 / span 1;
+                grid-row: 3/ span 1;
+                justify-self: center;
+            }
+
+            #other-l {
+                grid-column: 3 / span 1;
+                grid-row: 3/ span 1;
+                justify-self: center;
+            }
+        }
+
+        #nonBinary-field {
+            justify-self:center;
+            align-self: center;
+            grid-row: auto;
+            font-size: 1em;
+            width:80%;
+            height: 2em;
+
+            // background-color: #eee;
+	        // border: none;
+	        // padding: 12px 15px;
+	        // margin: 8px 0;
+            // width: 100%;
+            input {
+                @extend %textFieldPackage;
+            }
+        }
+
+        #lookingfor-field {
+            justify-self: center;
+            align-self: center;
+            width: 80%;
+            height:5em;
+            background-color: #eee;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+
+            padding:1%;
+            margin-left: 1%;
+
+            label {
+                grid-column: 2/span 1;
+                grid-row: 1/span 1;
+                justify-self: center;
+            }
+
+            #study-buddy-c {
+                grid-column: 1 / span 1;
+                grid-row: 2/ span 1;
+                justify-self: center;
+            }
+
+            #friend-c {
+                grid-column: 2 / span 1;
+                grid-row: 2/ span 1;
+                justify-self: center;
+            }
+
+            #sex-c {
+                grid-column: 3 / span 1;
+                grid-row: 2/ span 1;
+                justify-self: center;
+            }
+
+            #study-buddy-l {
+                grid-column: 1 / span 1;
+                grid-row: 3/ span 1;
+                justify-self: center;
+                align-content: center;
+            }
+
+            #friend-l {
+                grid-column: 2 / span 1;
+                grid-row: 3/ span 1;
+                justify-self: center;
+                align-content:center;
+
+                height: fit-content;
+            }
+
+            #sex-l {
+                grid-column: 3 / span 1;
+                grid-row: 3/ span 1;
+                justify-self: center;
+                align-content: center;
+
+                height: fit-content;
+            }
+        }
+
+        #bio-field{
+            justify-self: center;
+            align-self: center;
+            width: 80%;
+            height:5.9em;
+            background-color: #eee;
+
+            display: grid;
+            grid-template-rows: 1em 1fr;
+
+            label {
+                margin-top:1%;
+                text-align: center;
+            }
+
+            textarea{
+                align-self: center;
+                justify-self: center;
+                width: 95%;
+                height: 75%;
+                font-size: .7em;
+                font-family: 'Montserrat', sans-serif;
+                letter-spacing: 0.05em;
+                
+
+                resize: none;
+            }
+        }
+
+        #submit-field {
+            justify-self: center;
+            align-self: center;
+
+            width: 100%;
+            height: 100%;
+
+            display: grid;
+
+            padding-bottom: 0.4em;
+
+            button{
+                justify-self: center;
+                align-self: center;
+
+                border-radius: 1em;
+                border: .2em solid #FF4B2B;
+                background-color: #FF4B2B;
+                color: #FFFFFF;
+                font-size: .7em;
+                font-weight: bold;
+                padding: 0.52em 2em;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                transition: transform 80ms ease-in;
+            }
+        }
+
+
+    }
+
+    #newSignInBox {
+        grid-column: 2/ span 1;
+        grid-row: 2 / span 1;
+        background-color: lightgrey;
+    }
+
+
+
+
+
+    //Sign In SCSS ---------------------------------------------------------
+
+
+
+    #newSignInBox{
+        grid-column: 2/ span 1;
+        grid-row: 2 / span 1;
+        background-color: #FFF;
+
+        display:grid;
+        grid-template-rows: 25% auto 25%;
+
+
+        #height-box {
+            grid-row: 2/span 1;
+
+            display: grid;
+            grid-template-rows: auto;
+            row-gap: 1.5em;
+            overflow: visible;
+
+            scrollbar-width: none; 
+
+            %textFieldPackage {
+                border:none;
+                background-color: #eee;
+                width:100%;
+                height: 100%;
+                padding: 1%;
+                font-size: .7em;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            #Label-field {
+                height: fit-content;
+                justify-self:center;
+                align-self: center;
+                grid-row: auto;
+                font-size: 1em;
+
+                padding-top: 0.4em;
+            }
+
+            #email-field {
+                justify-self:center;
+                align-self: center;
+                grid-row: auto;
+                font-size: 1em;
+                width:80%;
+                height: 2em;
+
+                // background-color: #eee;
+                // border: none;
+                // padding: 12px 15px;
+                // margin: 8px 0;
+                // width: 100%;
+                input {
+                    @extend %textFieldPackage;
+                }
+            }
+
+            #password-field {
+                justify-self:center;
+                align-self: center;
+                grid-row: auto;
+                font-size: 1em;
+                width:80%;
+                height: 2em;
+
+                // background-color: #eee;
+                // border: none;
+                // padding: 12px 15px;
+                // margin: 8px 0;
+                // width: 100%;
+                input {
+                    @extend %textFieldPackage;
+                }
+            }
+
+            #submit-field {
+                justify-self: center;
+                align-self: center;
+
+                width: 100%;
+                height: 100%;
+
+                display: grid;
+
+                padding-bottom: 0.4em;
+
+                button{
+                    justify-self: center;
+                    align-self: center;
+
+                    border-radius: 1em;
+                    border: .2em solid #FF4B2B;
+                    background-color: #FF4B2B;
+                    color: #FFFFFF;
+                    font-size: .7em;
+                    font-weight: bold;
+                    padding: 0.52em 2em;
+                    letter-spacing: 0.05em;
+                    text-transform: uppercase;
+                    transition: transform 80ms ease-in;
+                }
+            }
+        }
+    }
+
+    //switcheroo CSS
+
+    #positionBox {
+        visibility: none;
+        grid-row: 2 / span 1;
+        grid-column: 2 / span 2;
+        pointer-events:none;
+
+        
+        
+        #switchBox{
+            width: 50%;
+            height:100%;
+            background-color: lightskyblue;
+
+            pointer-events: auto;
+            display: grid;
+            grid-template-rows: 15% auto 25%;
+
+            #height-box {
+                grid-row: 2/span 1;
+    
+                display: grid;
+                grid-template-rows: 1fr 1fr 1fr 35%;
+                // row-gap: 1.0em;
+                overflow: visible;
+    
+                scrollbar-width: none; 
+
+                #title-tag {
+                    height: fit-content;
+                    justify-self:center;
+                    align-self: center;
+                    grid-row: auto;
+                    font-size: 1em;
+                    padding-top: 0.4em;
+
+                    h1{
+                        color: white;
+                        text-align: center;
+                    }
+                }
+
+                #descrip-text {
+                    height: fit-content;
+                    justify-self:center;
+                    align-self: center;
+                    grid-row: auto;
+                    font-size: 1em;
+                    // padding-top: 0.4em;
+
+                    p{
+                        color: white;
+                        text-align: center;
+                    }
+                }
+
+                #switch-btn {
+                    justify-self: center;
+                    align-self: center;
+    
+                    width: 100%;
+                    height: 100%;
+    
+                    display: grid;
+    
+                    padding-top: 0.4em;
+
+                    padding-bottom: 0.4em;
+    
+                    button{
+                        justify-self: center;
+                        align-self: center;
+    
+                        border-radius: 1em;
+                        border: .2em solid #FF4B2B;
+                        background-color: #FF4B2B;
+                        color: #FFFFFF;
+                        font-size: .7em;
+                        font-weight: bold;
+                        padding: 0.52em 2em;
+                        letter-spacing: 0.05em;
+                        text-transform: uppercase;
+                        transition: transform 80ms ease-in;
+                    }
+                }
+            }
+        }
+    }
+
+}
+

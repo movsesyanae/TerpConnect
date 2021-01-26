@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+
+
+
+body {
+    background-color: #EEE;
+}
+
+@media only screen and (max-width: 1440px) {
+
+
+    main.course-selection-page {
+        font-size: 1em;
+
+
+        /* width: 40%; */
+    
+        margin: auto;
+    
+    
+        /* height: 15em; */
+    
+        width: 20em;
+    
+    
+        display: grid;
+    
+        /* grid-template-columns: 1fr; */
+        /* gap: 1rem; */
+    
+        /* align-items: center; */
+        
+        /* height:90vh; */
+        box-sizing: border-box;
+    
+    
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    #course-id-input {
+        font-size: 1em;
+    }
+
+    ul.course-display-package {
+        list-style-type:decimal-leading-zero;
+        font-size: 1em;
+        margin-top: -1em;
+        /* margin-bottom: -2em; */
+        margin-left: -20;
+    }
+
+    #submit-courses-btn {
+        margin-bottom: 1em;
+        font-size: .5em;
+    }
+
+    #profSpacing {
+        margin-left: .5em;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    main.course-selection-page {
+        font-size: 1.2vmax;
+
+
+        /* width: 40%; */
+    
+        margin: auto;
+    
+    
+        /* height: 15em; */
+    
+        width: 20em;
+    
+    
+        display: grid;
+    
+        /* grid-template-columns: 1fr; */
+        /* gap: 1rem; */
+    
+        /* align-items: center; */
+        
+        /* height:90vh; */
+        box-sizing: border-box;
+    
+    
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    ul.course-display-package {
+        list-style-type:decimal-leading-zero;
+        font-size: 0.7em;
+        margin-top: -1em;
+        /* margin-bottom: -2em; */
+        margin-left: -20;
+    }
+
+    
+}
+
+
+/* main.course-selection-page {
+
+    font-size: 1.2vmax;
+
+
+
+
+    margin: auto;
+
+
+  
+
+    width: 20em;
+
+
+    display: grid;
+
+  
+    box-sizing: border-box;
+
+
+    font-family: 'Montserrat', sans-serif;
+
+} */
+
+
+
+
+fieldset.course-selection-page {
+    display: grid;
+    background-color: #ccc;
+    
+    border-width: 0.3vmin;
+    border-style: solid;
+    border-radius: 1vmin;
+    border-color: black;
+    margin-top: 12.5em;
+    margin-bottom: 0.5em;
+    
+    
+
+
+
+    /* width: 100%; */
+    
+}
+
+.course-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.course-id-input {
+    display: grid;
+    /* grid-template-rows: 1fr 1fr; */
+    
+}
+
+input.course-selection-page {
+    background-color: #fafafa;
+    border-radius: 0.3em;
+    padding: 0.2em;
+    /* padding-left: 0.3vh; */
+    
+    /* border-width: 1px; */
+    border-style: solid;
+    border-color: black;
+    /* border-style:  none; */
+    
+    font-size: 0.7em;
+    /* font-weight: bold; */
+    width: 8em;
+    
+    margin-top: 1em;
+    margin-bottom: 1em;
+    
+}
+
+.dropdown-package {
+    /* width: 80%; */
+    /* font-size: 0.8vmax; */
+}
+
+#professor-label {
+    /* font-size: 1vmax; */
+    /* font-weight: bold; */
+    /* margin-top: -1.3em; */
+    
+}
+
+#professor-dropdown {
+
+
+    background-color: #fafafa;
+    border-radius: 0.3em;
+    padding-top: 0.21em;
+    padding-bottom: 0.21em;
+    /* padding-left: 0.3vh; */
+    
+    /* border-width: 1px; */
+    border-style: solid;
+    border-color: black;
+    /* border-style:  none; */
+    
+    font-size: 0.7em;
+    /* font-weight: bold; */
+    width: 100%;
+    
+    margin-top: 0.93em;
+    /* margin-bottom: 1em; */
+
+}
+
+.grace-pls {
+    display: grid;
+    width: 100%;
+    /* align-items: center; */
+    /* width: 100%; */
+    /* background-color: blue; */
+}
+
+#professor-dropdown-item {
+    font-size: 0.6em;
+    width: 15.1em;
+    /* border: solid; */
+    /* border-color: #f44336DD; */
+    /* width: 40em; */
+    /* margin-right: 100%; */
+    /* margin-left: -8em; */
+}
+
+.professor-button {
+    /* background-color: black; */
+    /* display: inline; */
+    /* margin: auto; */
+    width: 100%;
+}
+
+
+
+button.add-class-btn {
+	border-radius: 1em;
+	background-color: #f44336DD;
+    border-style: none;
+	/* border: 1px solid #FF4B2B; */
+    color: #FFFFFF;
+	font-size: 0.4em;
+	font-weight: bold;
+	padding: 1em 3em;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+button.add-class-btn:active {
+	transform: scale(0.95);
+}
+
+button.add-class-btn:focus {
+	outline: none;
+}
+
+
+
+fieldset.course-display-package {
+    margin-top: 5em;
+    margin-bottom: -11.5em;
+}
+
+
+
+
+
+
+h3.course-list-element {
+    /* font-size: 0.7em; */
+    display: grid;
+    grid-template-columns: 2fr 4fr 0.5fr;
+    margin-left: 1em ;
+    /* margin: auto; */
+}
+#course-label {
+    margin-left: -0.7em;
+}
+
+li.course-list-element {
+    display: list-item;
+    margin-top: 0.5em;
+    /* margin-left: 1em; */
+
+}
+
+#course-list-element {
+    /* font-size: 0.7em; */
+    display: grid;
+    grid-template-columns: 2fr 4fr 0.5fr;
+    margin-left: 1em ;
+
+    
+}
+
+button.remove-class-btn {
+    /* color: white;
+    border-radius: 50%;
+    padding: 0.4em;
+    border-style: none;
+    background-color: #f44336; */
+    
+    border-radius: 50%;
+    padding: 0em;
+    width: 1.5em;
+    height: 1.5em;
+    border: none;
+    color: white;
+    background-color: #f44336DD;
+    font-size: 0.8em;
+    font-weight: bold;
+    /* position: relative; */
+}
+button.remove-class-btn:hover {
+    /* color: white;
+    border-radius: 50%;
+    padding: 0.4em;
+    border-style: none;
+    background-color: #f44336; */
+    /* transform: scale(1.05); */
+    cursor: pointer;
+    color: black;
+
+}
+
+
+
+
+
+
+
+
+#submit-courses-btn {
+    margin-bottom: 1em;
+}
+
+
+
+
+
+   /* The alert message box */
+.alert {
+    /* padding: 3%;
+    color: white;
+    margin: auto;
+    width: 80%;
+    border-radius: 10px; */
+
+
+    /* box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); */
+    border-radius: 0.5em;
+    /* margin-top: 5%; */
+    padding: 0.95em;
+    background-color: #f44336DD;
+    /* border-color: black;
+    border-style:solid; */
+    color: white;
+    /* width: 100%; */
+    margin: auto;
+    width: 94%;
+    font-size: 0.7em;
+}
+  
+  /* The close button */
+.closebtn {
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 150%;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0%;
+    border-color: #000;
+  }
+  
+  /* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+  } 
+
+  #dropdownBox {
+      margin-top: 1em;
+      font-size: 1em;
+      ::-webkit-input-placeholder {
+        color:white;
+        
+        font-size:1em;
+    }
+
+  }
