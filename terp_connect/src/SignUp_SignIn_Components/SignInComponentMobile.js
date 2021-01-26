@@ -110,7 +110,7 @@ const SignUpComponentMobile = (props) => {
 			<div className = 'entry-mobile page-container'>
 
 					<div className = 'entry-mobile grid-unit1'>
-						<h1 id='cCLabel'className = 'entry-mobile course-connect'>Course Connect</h1>
+						<h1 id='cCLabel'className = 'entry-mobile course-connect'>Terp Connect</h1>
 						<p>New User? <Link to = '/sign-up-mobile' id ="signInLink">Sign up</Link></p>
 					</div>
 
