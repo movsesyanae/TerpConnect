@@ -110,7 +110,12 @@ const SignUpComponentMobile = (props) => {
                 // props.failMessage('You may not include symbols such as \' or < >');
                 return;
             }
-        }
+		}
+		
+		if (bio.includes('<') || bio.includes('>')) {
+			setSignUpFailMessage('please refrain from using the < and > characters in your bio');
+			return;
+		}
 
 		if(!(password == confirmPassword)) { //FIX: passwords showing up in console
             setSignUpFailMessage('Please make sure your passwords match');
@@ -186,6 +191,10 @@ const SignUpComponentMobile = (props) => {
 				password: password
 			});
 		} catch (error) {
+			if (error.code === 'UsernameExistsException' ){
+				setSignUpFailMessage('An account has already been made with that email');
+				return;
+			}
 			console.log('error signing up:', error);
 		}
 

@@ -74,13 +74,17 @@ const SignUp = (props) => {
             return;
         }
         
-        let inputs = [signUpFields.name, signUpFields.password, signUpFields.nonBinary, signUpFields.bio, signUpFields.email];
+        let inputs = [signUpFields.name, signUpFields.password, signUpFields.nonBinary, signUpFields.email];
         var i;
         for(i = 0; i < inputs.length; i++){
             if(inputs[i].includes('\'') || inputs[i].includes('<') || inputs[i].includes('>')) {
                 props.message('nice try bru');
                 return;
             }
+        }
+        if(signUpFields.bio.includes('<') || signUpFields.bio.includes('>')) {
+            props.message('please refrain from using the < and > characters in your bio');
+            return;
         }
         
         
@@ -130,7 +134,14 @@ const SignUp = (props) => {
                 password: signUpFields.password
             });
         } catch (error) {
-            console.log('error signing up:', error);
+
+            if(error['code'] === 'UsernameExistsException'){
+                props.message('An account has already been made with that email');
+                return;
+            }
+
+            console.log('error signing up:', error.code);
+			
         }
     }
 

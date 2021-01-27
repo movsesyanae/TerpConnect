@@ -239,7 +239,9 @@ const CourseSelector = (props) => {
                     await API.graphql(graphqlOperation(mutations.createCourse, {input: createCourseInput}));
                 } else {
                     let studentList = course.data.getCourse.studentList;
-                    studentList = studentList.push(email);
+                    console.log(studentList);
+                    studentList.push(email);
+                    console.log(studentList);
                     let courseUpdate = {id: newCourseList[i], studentList: studentList};
                     await API.graphql(graphqlOperation(mutations.updateCourse, { input: courseUpdate}))
                 }
