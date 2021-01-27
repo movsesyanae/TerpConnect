@@ -5,9 +5,12 @@ import SignUpPackage from './SignUp_SignIn_Components/NewSignUpSignIn';
 import SignUpComponentMobile from './SignUp_SignIn_Components/SignUpComponentMobile';
 import SignInComponentMobile from './SignUp_SignIn_Components/SignInComponentMobile';
 import CourseSelector from './Course_Selector_Component/CourseSelector';
+import CourseSelectorMobile from './Course_Selector_Component/CourseSelectorMobile';
 import Verification from './SignUp_SignIn_Components/Verification';
+import VerificationMobile from './SignUp_SignIn_Components/VerificationMobile';
 import {isMobile} from 'react-device-detect';
 import MainPage from './MainPage';
+import MainPageMobile from './MainPageMobile'
 import { Auth } from 'aws-amplify';
 
 
@@ -86,15 +89,25 @@ const CreateRouter = () => {
                         {isMobile ? <Redirect to = '/sign-up-mobile' /> : <SignUpPackage returnObject = {handleReturn} updateVerified = {(value) => setVerified(value)} />}
                     </Route>
                     
-                    {/* <Route exact path = '/courses' render = {() => <CourseSelector nextPage = {(value) => handleNextPage(value)} user = {user}/>}/> */}
-                    <Route exact path = '/courses' render = { () => (
+                    {/* <Route exact path = '/courses' render = { () => (
                         <CourseSelector returnObject = {handleReturn} />
-                    )} /> 
-                        {/* <CourseSelector email = {email} returnObject = {handleReturn} /> */}
-                    {/* </Route> */}
+                    )} />  */}
+                    <Route exact path = '/courses'>
+                        {isMobile ? <Redirect to = '/courses-mobile' /> : <CourseSelector returnObject = {handleReturn} />}
+                    </Route>
+
+                    <Route exact path = '/courses-mobile'>
+                        {!isMobile ? <Redirect to = '/courses-mobile' /> : <CourseSelectorMobile returnObject = {handleReturn} />}
+                    </Route>
                     
                     <Route exact path = '/verification'> 
+                        { isMobile && <Redirect to = 'verification-mobile' />}
                         {email && password && !verified && currentPage === 'confirm-email' ? <Verification email = {email} password = {password} returnObject = {handleReturn} /> : <Redirect to = '/' /> }
+                    </Route>
+
+                    <Route exact path = '/verification-mobile'> 
+                        { !isMobile && <Redirect to = 'verification' />}
+                        {email && password && !verified && currentPage === 'confirm-email' ? <VerificationMobile email = {email} password = {password} returnObject = {handleReturn} /> : <Redirect to = '/' /> }
                     </Route>
 
                     <Route exact path = '/sign-up-mobile'> 
@@ -110,7 +123,12 @@ const CreateRouter = () => {
 
                     <Route exact path = '/main'>
                         {/* {user === null ? <Redirect to = '/' /> : <MainPage returnObject = {handleReturn} />} */}
-                        <MainPage returnObject = {handleReturn} />
+                        {isMobile ? <Redirect to = '/main-mobile' /> : <MainPage returnObject = {handleReturn} /> }
+                    </Route>
+
+                    <Route exact path = '/main-mobile'>
+                        {/* {user === null ? <Redirect to = '/' /> : <MainPage returnObject = {handleReturn} />} */}
+                        {!isMobile ? <Redirect to = '/main' /> : <MainPageMobile returnObject = {handleReturn} />}
                     </Route>
                 </Switch>
             {/* </Router> */}

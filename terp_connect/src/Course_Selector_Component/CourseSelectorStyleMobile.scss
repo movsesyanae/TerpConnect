@@ -3,14 +3,15 @@
 
 
 
-#courseSelectorBody {
+#courseSelectorBodyMobile {
+    background-color: #EEE;
 
 
 
 
 
     main.course-selection-page {
-        font-size: 1.2vmax;
+        font-size: 1em;
 
 
         /* width: 40%; */
@@ -37,15 +38,26 @@
         font-family: 'Montserrat', sans-serif;
     }
 
+    #course-id-input {
+        font-size: 1em;
+    }
+
     ul.course-display-package {
         list-style-type:decimal-leading-zero;
-        font-size: 0.7em;
+        font-size: 1em;
         margin-top: -1em;
         /* margin-bottom: -2em; */
         margin-left: -20;
     }
 
-    
+    #submit-courses-btn {
+        margin-bottom: 1em;
+        font-size: .5em;
+    }
+
+    #profSpacing {
+        margin-left: .5em;
+    }
 
 
 
