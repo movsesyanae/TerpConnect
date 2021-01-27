@@ -25,7 +25,7 @@ const MainPage = (props) => {
     <div id='menuOuterScreen'>
         <div id='areaBox'>
             <div id='title'>
-                <p>Welcome to Course Connect</p>
+                <p>Welcome to TerpConnect</p>
             </div>
             <div id='text1'>
                 <p>We're still working on the website, but don't worry - you'll be able to talk to your classmates soon (next monday..hopefully..)</p>
