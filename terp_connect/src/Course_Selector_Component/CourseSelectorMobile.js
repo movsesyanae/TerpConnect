@@ -163,7 +163,7 @@ const CourseSelector = (props) => {
         var errorMessage = '';
         switch (errorCode) {
             case 1:
-                errorMessage = 'You have already the maximum amount of courses'
+                errorMessage = 'You can only select up to seven courses'
                 break;
 
             case 2:
