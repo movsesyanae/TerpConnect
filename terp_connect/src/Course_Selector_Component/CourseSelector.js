@@ -240,10 +240,13 @@ const CourseSelector = (props) => {
                 } else {
                     let studentList = course.data.getCourse.studentList;
                     console.log(studentList);
-                    studentList.push(email);
-                    console.log(studentList);
-                    let courseUpdate = {id: newCourseList[i], studentList: studentList};
-                    await API.graphql(graphqlOperation(mutations.updateCourse, { input: courseUpdate}))
+                    if(!studentList.includes(email)) {
+
+                        studentList.push(email);
+                        console.log(studentList);
+                        let courseUpdate = {id: newCourseList[i], studentList: studentList};
+                        await API.graphql(graphqlOperation(mutations.updateCourse, { input: courseUpdate}))
+                    }
                 }
             }
             
